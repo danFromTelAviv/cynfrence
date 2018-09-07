@@ -1,5 +1,5 @@
 # cynfrence
-An cython based inference only backend for keras ( ... in the making ). 
+A cython based inference backend for keras ( ... in the making ). 
 
 # motivation
 Keras is great to train. Keras backend ( other than theano which is no longer maintained ) are hard to install on target computers ( especially arm computers ). They are also not optimized out of the box. 
