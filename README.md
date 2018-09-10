@@ -109,10 +109,10 @@ I only list the layers which are selected for dev:
 - [ ] BatchNormalization
 
 * Activations
-- [ ] softmax
-- [ ] relu
-- [ ] tanh
-- [ ] sigmoid
+- [x] softmax
+- [x] relu
+- [x] tanh
+- [x] sigmoid
 - [x] None / linear 
 
 
