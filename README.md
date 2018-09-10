@@ -51,69 +51,69 @@ I'm sowly adding all generic keras layers. If you need a specific layer feel fre
 I only list the layers which are selected for dev:
 
 * Core layers
--[ ] Dense
--[ ] Activation
--[ ] Dropout
--[ ] Dense
--[ ] Flatten
--[ ] Input
--[ ] Reshape
+- [ ] Dense
+- [ ] Activation
+- [ ] Dropout
+- [ ] Dense
+- [ ] Flatten
+- [ ] Input
+- [ ] Reshape
 
 * Convolutional layers
--[ ] Conv1D
--[x] Conv2D
--[ ] SeperableConv1D
--[x] SeperableConv2D
--[ ] Conv2DTranspose
--[ ] Conv3D
--[ ] Cropping1D
--[ ] Cropping2D
--[ ] Cropping3D
--[ ] UpSampling1D
--[ ] UpSampling2D
--[ ] UpSampling3D
--[ ] ZeroPadding1D
--[ ] ZeroPadding2D
--[ ] ZeroPadding3D
+- [ ] Conv1D
+- [x] Conv2D
+- [ ] SeperableConv1D
+- [x] SeperableConv2D
+- [ ] Conv2DTranspose
+- [ ] Conv3D
+- [ ] Cropping1D
+- [ ] Cropping2D
+- [ ] Cropping3D
+- [ ] UpSampling1D
+- [ ] UpSampling2D
+- [ ] UpSampling3D
+- [ ] ZeroPadding1D
+- [ ] ZeroPadding2D
+- [ ] ZeroPadding3D 
 
 * Pooling layers
--[ ] MaxPooling1D
--[ ] MaxPooling2D
--[ ] MaxPooling3D
--[ ] AveragePooling1D
--[ ] AveragePooling2D
--[ ] AveragePooling3D
--[ ] GlobalMaxPooling1D
--[ ] GlobalMaxPooling2D
--[ ] GlobalMaxPooling3D
--[ ] GlobalAveragePooling1D
--[ ] GlobalAveragePooling2D
--[ ] GlobalAveragePooling3D
+- [ ] MaxPooling1D
+- [ ] MaxPooling2D
+- [ ] MaxPooling3D
+- [ ] AveragePooling1D
+- [ ] AveragePooling2D
+- [ ] AveragePooling3D
+- [ ] GlobalMaxPooling1D
+- [ ] GlobalMaxPooling2D
+- [ ] GlobalMaxPooling3D
+- [ ] GlobalAveragePooling1D
+- [ ] GlobalAveragePooling2D
+- [ ] GlobalAveragePooling3D 
 
 * Reccurent Layers
--[ ] RNN
--[ ] SimpleRNN
--[ ] GRU
--[ ] LSTM
+- [ ] RNN
+- [ ] SimpleRNN
+- [ ] GRU
+- [ ] LSTM
 
 * Merge Layers
--[ ] Add
--[ ] Subtract
--[ ] Mutiply
--[ ] Average
--[ ] Average
--[ ] Maximum
--[ ] Concatenate
+- [ ] Add
+- [ ] Subtract
+- [ ] Mutiply
+- [ ] Average
+- [ ] Average
+- [ ] Maximum
+- [ ] Concatenate 
 
 * Noemalization Layers
--[ ] BatchNormalization
+- [ ] BatchNormalization
 
 * Activations
--[ ] softmax
--[ ] relu
--[ ] tanh
--[ ] sigmoid
--[x] None / linear 
+- [ ] softmax
+- [ ] relu
+- [ ] tanh
+- [ ] sigmoid
+- [x] None / linear 
 
 
 
