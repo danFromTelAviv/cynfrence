@@ -51,13 +51,10 @@ I'm sowly adding all generic keras layers. If you need a specific layer feel fre
 I only list the layers which are selected for dev:
 
 * Core layers
-- [ ] Dense
+- [x] Dense
 - [x] Activation
-- [ ] Dropout
-- [ ] Dense
-- [ ] Flatten
-- [ ] Input
-- [ ] Reshape
+- [x] Flatten
+- [x] Reshape
 
 * Convolutional layers
 - [ ] Conv1D
@@ -81,13 +78,13 @@ I only list the layers which are selected for dev:
 - [x] MaxPooling2D
 - [ ] MaxPooling3D
 - [ ] AveragePooling1D
-- [ ] AveragePooling2D
+- [x] AveragePooling2D
 - [ ] AveragePooling3D
 - [ ] GlobalMaxPooling1D
-- [ ] GlobalMaxPooling2D
+- [x] GlobalMaxPooling2D
 - [ ] GlobalMaxPooling3D
 - [ ] GlobalAveragePooling1D
-- [ ] GlobalAveragePooling2D
+- [x] GlobalAveragePooling2D
 - [ ] GlobalAveragePooling3D 
 
 * Reccurent Layers
@@ -97,13 +94,12 @@ I only list the layers which are selected for dev:
 - [ ] LSTM
 
 * Merge Layers
-- [ ] Add
-- [ ] Subtract
-- [ ] Mutiply
-- [ ] Average
-- [ ] Average
-- [ ] Maximum
-- [ ] Concatenate 
+- [x] Add
+- [x] Subtract
+- [x] Mutiply
+- [x] Average
+- [x] Maximum
+- [x] Concatenate 
 
 * Noemalization Layers
 - [x] BatchNormalization

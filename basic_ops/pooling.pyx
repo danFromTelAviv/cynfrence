@@ -79,3 +79,11 @@ def average_pooling_2d_with_padding(double[:, :, :, ::1] input_tensor, int kerne
      np.ones((input_tensor.shape[0], kernel_height, kernel_width, input_tensor.shape[-1]), dtype=np.double)/
         (double(kernel_height)*double(kernel_width)),
                           strides_height=kernel_height, strides_width=kernel_width)
+
+
+def global_max_pooling_2d(input_tensor):
+    return input_tensor.max(axis=1, keepdims=True).max(axis=2, keepdims=True)
+
+
+def global_average_pooling_2d(input_tensor):
+    return nput_tensor.mean(axis=1, keepdims=True).mean(axis=2, keepdims=True)
