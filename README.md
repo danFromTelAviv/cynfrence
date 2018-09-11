@@ -52,7 +52,7 @@ I only list the layers which are selected for dev:
 
 * Core layers
 - [ ] Dense
-- [ ] Activation
+- [x] Activation
 - [ ] Dropout
 - [ ] Dense
 - [ ] Flatten
@@ -78,7 +78,7 @@ I only list the layers which are selected for dev:
 
 * Pooling layers
 - [ ] MaxPooling1D
-- [ ] MaxPooling2D
+- [x] MaxPooling2D
 - [ ] MaxPooling3D
 - [ ] AveragePooling1D
 - [ ] AveragePooling2D
@@ -106,7 +106,7 @@ I only list the layers which are selected for dev:
 - [ ] Concatenate 
 
 * Noemalization Layers
-- [ ] BatchNormalization
+- [x] BatchNormalization
 
 * Activations
 - [x] softmax

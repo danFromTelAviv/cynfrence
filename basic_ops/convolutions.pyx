@@ -75,9 +75,9 @@ def conv2d_with_padding(double[:, :, :, ::1] input_tensor, double[:, :, :, ::1] 
                           int strides_height=1, int strides_width=1):
     # reflects : https://www.tensorflow.org/api_guides/python/nn#Notes_on_SAME_Convolution_Padding
     cdef Py_ssize_t kernel_height_padding_top = int(kernels.shape[0]/2)
-    cdef Py_ssize_t kernel_height_padding_bottom = int(kernels.shape[0]/2) + (kernels.shape[0]+1 % 2)
+    cdef Py_ssize_t kernel_height_padding_bottom = int(kernels.shape[0]/2) + ((kernels.shape[0]+1) % 2)
     cdef Py_ssize_t kernel_width_padding_left = int(kernels.shape[1]/2)
-    cdef Py_ssize_t kernel_width_padding_right = int(kernels.shape[1]/2) + (kernels.shape[0]+1 % 2)
+    cdef Py_ssize_t kernel_width_padding_right = int(kernels.shape[1]/2) + ((kernels.shape[0]+1) % 2)
     input_tensor_padded = np.pad(input_tensor, ((0,0), (kernel_height_padding_top, kernel_height_padding_bottom),
                                                 (kernel_width_padding_left, kernel_width_padding_right), (0,0)))
     return conv2d_no_padding(input_tensor_padded, kernels,
@@ -161,9 +161,9 @@ def seperable_conv2d_with_padding(double[:, :, :, ::1] input_tensor,
                             int strides_height=1, int strides_width=1):
     # reflects : https://www.tensorflow.org/api_guides/python/nn#Notes_on_SAME_Convolution_Padding
     cdef Py_ssize_t kernel_height_padding_top = int(kernels_depthwise.shape[0]/2)
-    cdef Py_ssize_t kernel_height_padding_bottom = int(kernels_depthwise.shape[0]/2) + (kernels_depthwise.shape[0]+1 % 2)
+    cdef Py_ssize_t kernel_height_padding_bottom = int(kernels_depthwise.shape[0]/2) + ((kernels_depthwise.shape[0]+1) % 2)
     cdef Py_ssize_t kernel_width_padding_left = int(kernels_depthwise.shape[1]/2)
-    cdef Py_ssize_t kernel_width_padding_right = int(kernels_depthwise.shape[1]/2) + (kernels_depthwise.shape[0]+1 % 2)
+    cdef Py_ssize_t kernel_width_padding_right = int(kernels_depthwise.shape[1]/2) + ((kernels_depthwise.shape[0]+1) % 2)
     input_tensor_padded = np.pad(input_tensor, ((0,0), (kernel_height_padding_top, kernel_height_padding_bottom),
                                                 (kernel_width_padding_left, kernel_width_padding_right), (0,0)))
     return seperable_conv2d_no_padding(input_tensor_padded, kernels_depthwise, kernel_pointwise,
