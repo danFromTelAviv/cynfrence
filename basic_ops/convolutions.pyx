@@ -1,13 +1,14 @@
 from __future__ import print_function
-# %load_ext cython
 import Cython
 print(Cython.__version__)
 
-# %%cython -a
 cimport cython
 import numpy as np
+from cython.parallel cimport prange
 
+#cython: boundscheck=False, wraparound=False, nonecheck=False
 
+@cython.nonecheck(False)
 @cython.boundscheck(False)
 @cython.wraparound(False)
 def conv2d_no_padding(double[:, :, :, ::1] input_tensor, double[:, :, :, ::1] kernels,
@@ -45,28 +46,28 @@ def conv2d_no_padding(double[:, :, :, ::1] input_tensor, double[:, :, :, ::1] ke
     cdef Py_ssize_t output_height = int((input_height-kernel_height_reduction) / strides_height)
     cdef Py_ssize_t output_width = int((input_width-kernel_width_reduction) / strides_width)
 
-    output = np.zeros((input_batch_size, output_height, output_width, kernels_num_filters), dtype=np.double)
-    cdef double[:, :, : , :] output_view = output
+    cdef double[:, :, : , :] output_view = np.zeros((input_batch_size, output_height, output_width, kernels_num_filters), dtype=np.double)
+    # cdef double[:, :, : , :] output_view = output
 
 
-    cdef int i, j, b, k, di, dj, q
-    # num_ops = 0
-    cdef int dilated_i, dilated_j, strided_i, strided_j, di_dilated, dj_dilated
-    for i, strided_i in zip(range(output_height), range(0, output_height*strides_height, strides_height)):
-        for j, strided_j in zip(range(output_width), range(0, output_width*strides_width, strides_width)):
-            for di, di_dilated in zip(range(kernels_height), range(0, kernels_height*dilation_height, dilation_height)):
-                for dj, dj_dilated in zip(range(kernels_width), range(0, kernels_width*dilation_width, dilation_width)):
+    cdef Py_ssize_t  i, j, b, k, di, dj, q
+    cdef int dilated_i, dilated_j, strided_i, strided_j, di_strided_dilated, dj_strided_dilated
+    #for i in prange(output_height, nogil=True):
+    for i in range(output_height):
+        strided_i = i*strides_height
+        for j  in range(output_width):
+            strided_j = j*strides_width
+            for di  in range(kernels_height):
+                di_strided_dilated = di*dilation_height+strided_i
+                for dj in range(kernels_width):
+                    dj_strided_dilated = dj*dilation_width+strided_j
                     for b in range(input_batch_size):
                         for k in range(kernels_num_filters):
                             for q in range(kernels_channels):
                                 output_view[b, i, j, k] += \
-                                    input_tensor[b, strided_i + di_dilated, strided_j + dj_dilated, q]  \
+                                    input_tensor[b, di_strided_dilated, dj_strided_dilated, q]  \
                                                       * kernels[di, dj, q, k]
-    #                             num_ops +=1
-    # print("ops_breakdown: ")
-    # print(i, j, b, k, di, dj, q)
-    # print("num_ops :", num_ops)
-    return output
+    return output_view
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

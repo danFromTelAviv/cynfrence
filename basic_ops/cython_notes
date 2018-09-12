@@ -1,0 +1,12 @@
+compiling:
+https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html
+python3 setup.py build_ext --inplace
+
+
+optimizing:
+basics-
+https://github.com/cython/cython/blob/master/docs/examples/userguide/numpy_tutorial/numpy_and_cython.ipynb
+parallelizing
+http://nealhughes.net/cython1/
+
+

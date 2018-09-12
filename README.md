@@ -26,22 +26,17 @@ All standards follow tensorflow for compatibility.
 Here is where i would very much appreciate your help... ;)
 short term:
 1) create thorough tests. 
-2) add basic layers like batch normalization, pooling ( average, max ), dense, activations. 
-* numpy / scipy inplementations likely already exist and are super fast as is... 
--[ ] MaxPooling2D
--[ ] AveragePooling2D
-
-3) Create a simple translator from keras models to cython using the available layers. 
+2) Create a simple translator from keras models to cython using the available layers. 
 
 longer term:
-1) add all keras layers with full features support. 
-* 1D, 3D, transpose Convolutio
-* Reccurent Layers ( GRU, LSTM, simpleRNN... )
-2) make the installation super simple and pain free while keeping very high performance.
+1) make the installation super simple and pain free while keeping very high performance.
 
 long long term:
-1) add specialized optimizations such as fft based convolutions when kernel is > 7x7 ( or even run a set of tests on the machine in order to evaluate which optimizations are best to use ). 
-2) fork keras and add cynfrence as a backend with all the learning capabilities turned off. 
+1) add all keras layers with full features support. 
+* 1D, 3D, transpose Convolution
+* Reccurent Layers ( GRU, LSTM, simpleRNN... )
+2) add specialized optimizations such as fft based convolutions when kernel is > 7x7 ( or even run a set of tests on the machine in order to evaluate which optimizations are best to use ). 
+3) fork keras and add cynfrence as a backend with all the learning capabilities turned off. 
 
 
 
@@ -109,6 +104,7 @@ I only list the layers which are selected for dev:
 - [x] relu
 - [x] tanh
 - [x] sigmoid
+- [x] hard sigmoid
 - [x] None / linear 
 
 
