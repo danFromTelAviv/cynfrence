@@ -4,7 +4,7 @@ A cython based inference backend for keras ( ... in the making ).
 # use
 In the future I will prepare a single setup.py file that compiles everything. You can then add a cython_backend.py into the keras code and specify to use it.
 For now the use is somewhat manual. 
-1) Compile the relevant .pyx file by changing setup.py and running python '''setup.py build_ext --inplace'''
+1) Compile the relevant .pyx file by changing setup.py and running python ```setup.py build_ext --inplace```
 2) Extract the weights of each layer in your model. 
 3) Write the model as a class like you would in pytorch using the cython functions and the weights you retrieved from the model. 
 
